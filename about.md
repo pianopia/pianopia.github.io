@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+I'm a programmer adn creator.
+Usualy I'm working as Android/iOS Engineer.
+Not only that make 3DModel, compose Music, Design using the Illustrator and Photoshop etc .. 
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[grandpianoaoa@gmail.com](mailto:grandpianoaoa@gmail.com)
