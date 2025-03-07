@@ -26,10 +26,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Copy CNAME and create .nojekyll
+      - name: Prepare for deployment
         run: |
-          cp CNAME out/
           touch out/.nojekyll
+          cp CNAME out/
+          node scripts/fix-404.js
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4

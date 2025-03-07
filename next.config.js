@@ -9,7 +9,7 @@ const nextConfig = {
   distDir: 'out',
   // GitHub Pagesの設定
   basePath: '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/' : '',
+  assetPrefix: '',
   trailingSlash: true,
 }
 
