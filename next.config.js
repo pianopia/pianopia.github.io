@@ -7,6 +7,10 @@ const nextConfig = {
   // 静的エクスポート設定
   output: 'export',
   distDir: 'out',
+  // GitHub Pagesの設定
+  basePath: '',
+  assetPrefix: '',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig 
