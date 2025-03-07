@@ -2,53 +2,191 @@
 layout: default
 ---
 
-<!DOCTYPE html>
-    <head></head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.3.1/jquery.cookie.min.js"></script>
-    <script src="jquery.utility-kit.js"></script>
-    <body style="margin:0 auto;">
-    <h1 style="background-color:#01A9DB;color:white;margin-top:0px;">Tasks</h1>
-    <table style="width:100%;">
-        <tr><td style="width:20%;font-weight:bold;">BELENUS</td></tr>
-        <tr><td style="width:70%;height:20px;background: -webkit-linear-gradient(left, #14cbff 10%, #cccccc 10%);"><span style="color:white;">20%</span></td></tr>
-        <tr><td>・Unreal Engine 5で試作</td></tr>
-        <tr><td>・Godotで試作</td></tr>
-        <tr><td>・Unityのエディタ拡張</td></tr>
-        <tr><td>・企画書や</td></tr>
-        <tr><td><hr/></td></tr>
-
-
-        <tr><td style="width:20%;font-weight:bold;">EndRune</td></tr>
-        <tr><td style="width:70%;height:20px;background: -webkit-linear-gradient(left, #14cbff 10%, #cccccc 20%);"><span style="color:white;">20%</span></td></tr>
-        <tr><td>・背景制作</td></tr>
-        <tr><td><hr/></td></tr>
-
-        <tr><td style="width:20%;font-weight:bold;">ShakeBattler</td></tr>
-        <tr><td style="width:70%;height:20px;background: -webkit-linear-gradient(left, #14cbff 10%, #cccccc 20%);"><span style="color:white;">20%</span></td></tr>
-        <tr><td>・</td></tr>
-        <tr><td>・Firebase接続</td></tr>
-        <tr><td></td></tr>
-        <tr><td><hr/></td></tr>
-
-        <tr><td style="width:20%;font-weight:bold;">ゲスゲーム</td></tr>
-        <tr><td style="width:70%;height:20px;background: -webkit-linear-gradient(left, #14cbff 10%, #cccccc 20%);"><span style="color:white;">20%</span></td></tr>
-    </table>
-</body>
-</html>
-
-
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+<div class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title">Pianopia</h1>
+    <p class="hero-subtitle">Android/iOS, Web, Game Developer</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">プロジェクト</a>
+      <a href="#skills" class="btn btn-secondary">スキル</a>
+    </div>
+  </div>
 </div>
+
+<section id="about" class="section">
+  <div class="section-container">
+    <h2 class="section-title">私について</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>モバイルアプリ、ウェブ、ゲーム開発に情熱を持つデベロッパーです。ユーザー体験を向上させる革新的なソリューションの構築に取り組んでいます。</p>
+        <p>新しい技術を学び、クリエイティブなプロジェクトに挑戦することが好きです。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section section-alt">
+  <div class="section-container">
+    <h2 class="section-title">スキル</h2>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>モバイル開発</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <span class="skill-name">Android (Java/Kotlin)</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">iOS (Swift)</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h3>ウェブ開発</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <span class="skill-name">HTML/CSS/JavaScript</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">React</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h3>ゲーム開発</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <span class="skill-name">Unity</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Unreal Engine</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 70%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Godot</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 65%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="section-container">
+    <h2 class="section-title">プロジェクト</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-header">
+          <h3>BELENUS</h3>
+          <span class="project-status">進行中 - 20%</span>
+        </div>
+        <div class="project-body">
+          <p>Unreal Engine 5とGodotを使用したゲーム開発プロジェクト。Unityのエディタ拡張も含む。</p>
+          <ul class="project-tasks">
+            <li>Unreal Engine 5で試作</li>
+            <li>Godotで試作</li>
+            <li>Unityのエディタ拡張</li>
+            <li>企画書作成</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-header">
+          <h3>EndRune</h3>
+          <span class="project-status">進行中 - 20%</span>
+        </div>
+        <div class="project-body">
+          <p>ゲーム開発プロジェクト。現在は背景制作に注力しています。</p>
+          <ul class="project-tasks">
+            <li>背景制作</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-header">
+          <h3>ShakeBattler</h3>
+          <span class="project-status">進行中 - 20%</span>
+        </div>
+        <div class="project-body">
+          <p>Firebase連携を含むモバイルゲームプロジェクト。</p>
+          <ul class="project-tasks">
+            <li>Firebase接続</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="blog-preview" class="section section-alt">
+  <div class="section-container">
+    <h2 class="section-title">最新の記事</h2>
+    <div class="posts">
+      {% for post in site.posts limit:3 %}
+        <article class="post-card">
+          <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+          <div class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</div>
+          <div class="post-excerpt">
+            {{ post.excerpt }}
+          </div>
+          <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">続きを読む</a>
+        </article>
+      {% endfor %}
+    </div>
+    <div class="view-all">
+      <a href="{{ site.baseurl }}/blog" class="btn btn-outline">すべての記事を見る</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="section-container">
+    <h2 class="section-title">お問い合わせ</h2>
+    <p class="contact-text">プロジェクトの依頼や質問がありましたら、お気軽にご連絡ください。</p>
+    <div class="social-links">
+      {% if site.footer-links.github %}
+        <a href="https://github.com/{{ site.footer-links.github }}" class="social-link" target="_blank">
+          <i class="fa fa-github"></i>
+        </a>
+      {% endif %}
+      {% if site.footer-links.twitter %}
+        <a href="https://twitter.com/{{ site.footer-links.twitter }}" class="social-link" target="_blank">
+          <i class="fa fa-twitter"></i>
+        </a>
+      {% endif %}
+      {% if site.footer-links.linkedin %}
+        <a href="https://linkedin.com/in/{{ site.footer-links.linkedin }}" class="social-link" target="_blank">
+          <i class="fa fa-linkedin"></i>
+        </a>
+      {% endif %}
+      {% if site.footer-links.email %}
+        <a href="mailto:{{ site.footer-links.email }}" class="social-link">
+          <i class="fa fa-envelope"></i>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
