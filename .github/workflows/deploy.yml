@@ -29,7 +29,7 @@ jobs:
       - name: Prepare for deployment
         run: |
           touch out/.nojekyll
-          cp CNAME out/
+          cp CNAME docs/
           node scripts/fix-404.js
 
       - name: Deploy
