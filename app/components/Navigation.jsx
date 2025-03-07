@@ -16,7 +16,7 @@ const navigation = [
 
 export default function Navigation() {
   const pathname = usePathname();
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     // クライアントサイドでのみ実行
