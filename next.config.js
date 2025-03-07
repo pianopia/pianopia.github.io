@@ -9,7 +9,7 @@ const nextConfig = {
   distDir: 'docs',
   // GitHub Pagesの設定
   basePath: '',
-  assetPrefix: '',
+  assetPrefix: '/',
   trailingSlash: true,
 }
 

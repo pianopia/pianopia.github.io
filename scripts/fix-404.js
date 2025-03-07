@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-// outディレクトリのパス
-const outDir = path.join(__dirname, '..', 'out');
+// docsディレクトリのパス
+const outDir = path.join(__dirname, '..', 'docs');
 
 // index.htmlを読み込む
 const indexPath = path.join(outDir, 'index.html');

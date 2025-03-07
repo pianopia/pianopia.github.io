@@ -9,7 +9,7 @@
     "lint": "next lint",
     "export": "next export",
     "fix-404": "node scripts/fix-404.js",
-    "deploy": "npm run build && touch docs/.nojekyll && cp CNAME docs/ && node scripts/fix-404.js && gh-pages -d out"
+    "deploy": "npm run build && touch docs/.nojekyll && cp CNAME docs/ && node scripts/fix-404.js"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",

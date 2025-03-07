@@ -28,13 +28,13 @@ jobs:
 
       - name: Prepare for deployment
         run: |
-          touch out/.nojekyll
+          touch docs/.nojekyll
           cp CNAME docs/
           node scripts/fix-404.js
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: out
+          folder: docs
           branch: gh-pages
           clean: true 
