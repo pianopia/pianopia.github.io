@@ -9,7 +9,7 @@ const nextConfig = {
   distDir: 'docs',
   // GitHub Pagesの設定
   basePath: '',
-  assetPrefix: '/',
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://pianopia.github.io' : '',
   trailingSlash: true,
 }
 

@@ -9,12 +9,14 @@
     "lint": "next lint",
     "export": "next export",
     "fix-404": "node scripts/fix-404.js",
-    "deploy": "npm run build && touch docs/.nojekyll && cp CNAME docs/ && node scripts/fix-404.js"
+    "fix-paths": "node scripts/fix-paths.js",
+    "deploy": "npm run build && touch docs/.nojekyll && cp CNAME docs/ && node scripts/fix-404.js && cp -r docs/_next/static docs/static && npm run fix-paths"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
     "autoprefixer": "^10.4.20",
+    "glob": "^11.0.1",
     "gray-matter": "^4.0.3",
     "next": "^15.2.1",
     "postcss": "^8.5.3",
