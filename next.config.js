@@ -6,7 +6,7 @@ const nextConfig = {
   },
   // 静的エクスポート設定
   output: 'export',
-  distDir: 'out',
+  distDir: 'docs',
   // GitHub Pagesの設定
   basePath: '',
   assetPrefix: '',
