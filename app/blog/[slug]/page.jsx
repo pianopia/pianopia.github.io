@@ -2,18 +2,18 @@ import Link from 'next/link'
 import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { CalendarIcon, ClockIcon, ArrowLeftIcon, ShareIcon } from '@heroicons/react/24/outline'
-import { getPostBySlug, getAllPosts } from '../../lib/blog'
+import { getPostBySlug, getAllPostSlugs } from '../../../lib/blog'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = getAllPostSlugs();
   return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
 export async function generateMetadata({ params }) {
-  const post = getPostBySlug(params.slug);
+  const post = await getPostBySlug(params.slug);
   
   if (!post) {
     return {
@@ -28,43 +28,19 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function BlogPost({ params }) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPost({ params }) {
+  const post = await getPostBySlug(params.slug);
   
   if (!post) {
     notFound();
   }
   
-  // Markdownをシンプルに表示するための関数
-  const renderMarkdown = (content) => {
-    // 行ごとに分割
-    const lines = content.split('\n');
-    
-    return lines.map((line, index) => {
-      // 見出し
-      if (line.startsWith('# ')) {
-        return <h1 key={index} className="text-3xl font-bold mt-8 mb-4">{line.substring(2)}</h1>;
-      }
-      if (line.startsWith('## ')) {
-        return <h2 key={index} className="text-2xl font-bold mt-6 mb-3">{line.substring(3)}</h2>;
-      }
-      if (line.startsWith('### ')) {
-        return <h3 key={index} className="text-xl font-bold mt-5 mb-2">{line.substring(4)}</h3>;
-      }
-      
-      // リスト
-      if (line.startsWith('- ')) {
-        return <li key={index} className="ml-6 mb-2">{line.substring(2)}</li>;
-      }
-      
-      // 空行
-      if (line.trim() === '') {
-        return <br key={index} />;
-      }
-      
-      // 通常のテキスト
-      return <p key={index} className="mb-4">{line}</p>;
-    });
+  // 読了時間の計算（単純な推定）
+  const calculateReadTime = (content) => {
+    const wordsPerMinute = 200; // 1分あたりの単語数
+    const words = content.split(/\s+/).length;
+    const minutes = Math.ceil(words / wordsPerMinute);
+    return `${minutes}分`;
   };
 
   return (
@@ -87,16 +63,17 @@ export default function BlogPost({ params }) {
                   <time dateTime={post.date}>{post.date}</time>
                   <span className="mx-2">•</span>
                   <ClockIcon className="mr-1.5 h-4 w-4 flex-shrink-0" />
-                  <span>{post.readTime}</span>
+                  <span>{calculateReadTime(post.contentHtml)}</span>
                   <span className="mx-2">•</span>
                   <span className="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900 px-3 py-0.5 text-sm font-medium text-blue-800 dark:text-blue-200">
                     {post.category}
                   </span>
                 </div>
                 
-                <div className="prose prose-lg prose-blue dark:prose-invert max-w-none">
-                  {renderMarkdown(post.content)}
-                </div>
+                <div 
+                  className="prose prose-lg prose-blue dark:prose-invert max-w-none"
+                  dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+                />
                 
                 <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
                   <div className="flex justify-between items-center">

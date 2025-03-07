@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import { CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/24/outline'
-import { getAllPosts, getAllCategories } from '../lib/blog'
+import { getAllPosts, getAllCategories } from '../../lib/blog'
 
 export const metadata = {
   title: 'ブログ - pianopia',
@@ -15,6 +15,14 @@ export default function Blog() {
     { name: 'すべて', count: posts.length },
     ...getAllCategories()
   ];
+
+  // 読了時間の計算（単純な推定）
+  const calculateReadTime = (content) => {
+    const wordsPerMinute = 200; // 1分あたりの単語数
+    const words = content.split(/\s+/).length;
+    const minutes = Math.ceil(words / wordsPerMinute);
+    return `${minutes}分`;
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -51,7 +59,7 @@ export default function Blog() {
                           <time dateTime={post.date}>{post.date}</time>
                           <span className="mx-2">•</span>
                           <ClockIcon className="mr-1.5 h-4 w-4 flex-shrink-0" />
-                          <span>{post.readTime}</span>
+                          <span>{calculateReadTime(post.content)}</span>
                         </div>
                         <p className="mt-3 text-base text-gray-500 dark:text-gray-400">{post.description}</p>
                         <div className="mt-4">
