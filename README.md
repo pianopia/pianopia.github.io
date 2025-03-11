@@ -21,6 +21,12 @@ npm run build
 
 ## デプロイ
 
+```bash
+NODE_ENV=production npm run build
+
+NODE_ENV=production npm run deploy
+```
+
 このリポジトリは、GitHub Actionsを使用して自動的にGitHub Pagesにデプロイされます。
 `main`ブランチにプッシュすると、自動的にビルドとデプロイが行われます。
 
