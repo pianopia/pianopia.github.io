@@ -27,10 +27,16 @@ jobs:
         run: npm run build
 
       - name: Prepare for deployment
-        run: |
-          touch docs/.nojekyll
-          cp CNAME docs/
-          node scripts/fix-404.js
+        run: npm run export
+      
+      - name: Fix 404
+        run: npm run fix-404
+
+      - name: Fix paths
+        run: npm run fix-paths
+      
+      - name: deploy
+        run: npm run deploy
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
