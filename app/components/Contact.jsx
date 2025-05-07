@@ -58,15 +58,6 @@ export default function Contact() {
                   <p className="mt-1">メールでのお問い合わせは24時間受け付けています。</p>
                 </div>
               </div>
-              <div className="flex">
-                <div className="flex-shrink-0">
-                  <PhoneIcon className="h-6 w-6 text-blue-600 dark:text-blue-400" aria-hidden="true" />
-                </div>
-                <div className="ml-3 text-base text-gray-500 dark:text-gray-300">
-                  <p>+81 (0) 123-4567</p>
-                  <p className="mt-1">平日10:00〜18:00の間で対応しています。</p>
-                </div>
-              </div>
             </dl>
             <div className="mt-12">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white">SNS</h3>

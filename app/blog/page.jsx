@@ -119,14 +119,14 @@ export default function Blog() {
                             placeholder="メールアドレス"
                           />
                         </div>
-                        <div className="mt-2">
+                        {/* <div className="mt-2">
                           <button
                             type="submit"
                             className="w-full btn-primary"
                           >
                             購読する
                           </button>
-                        </div>
+                        </div> */}
                       </form>
                     </div>
                   </div>

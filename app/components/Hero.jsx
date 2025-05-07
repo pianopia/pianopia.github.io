@@ -12,7 +12,7 @@ export default function Hero() {
                 <span className="block xl:inline">pianopia</span>
               </h1>
               <p className="mt-3 text-base text-gray-500 dark:text-gray-300 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
-                Android/iOS、Web、ゲーム開発者。プログラミングだけでなく、3Dモデリング、音楽作曲、グラフィックデザインなど、多様なスキルを持つクリエイターです。
+                Android/iOS、Web、ゲーム開発者。プログラミングだけでなく、3Dモデリング、音楽制作、UI/UXデザインなど。
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
